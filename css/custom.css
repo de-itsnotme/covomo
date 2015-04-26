@@ -1,3 +1,43 @@
 @charset "utf-8";
 /* CSS Document */
 
+body {
+	font-family:Verdana, Geneva, sans-serif;	
+}
+
+body h1 {
+	color:#333;
+	text-align:center;	
+}
+
+#ouibounce-modal h4 {
+	color:#039;	
+}
+
+#ouibounce-modal .modal {
+	height: 280px;	
+}
+
+#ouibounce-modal form input[type="text"], #ouibounce-modal form input[type="email"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2em;
+    padding: 12px;
+    width: 300px;
+}
+
+table#pagetable {
+	font-size:12px;
+}
+
+table#pagetable td {
+	text-align:center;
+}
+
+table#pagetable div.product {
+	background-color:#069;
+	border:3px dotted #fff;
+	display:block;
+	height:100px;
+	width:100px;	
+}
