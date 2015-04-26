@@ -1,2 +1,2 @@
 # covomo
-Repository for Covomo test app
+My first attempt to use GITHUB for a test project for COVOMO
