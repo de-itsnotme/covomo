@@ -24,6 +24,15 @@
             <td><div class="product"></div>Item 6</td>
         </tr>
     </table>
+    
+    <div id="ouibounce-modal-success">
+      <div class="underlay"></div>
+      <div class="modal">
+        <div class="modal-title">
+          <h3>Success!</h3>
+        </div>
+      </div>
+    </div>
 
 <!-- OuiBounce Modal -->
     <div id="ouibounce-modal">
@@ -37,10 +46,9 @@
           <h4>Sure this offer interests you, doesn't it?<br />
           Why not drop us your email address so that we get back to you instead. :)</h4>
           
-          <form method="post" enctype="multipart/form-data" action="http://covomo-test-projekt.dev/api.php">
+          <form id="emailerForm" method="post" enctype="multipart/form-data" action="http://covomo-test-projekt.dev/api.php">
             <input type="text" placeholder="you@email.com" name="email" id="email" required="required">
-            <input type="submit" value="learn more &raquo;">
-            <p class="form-notice">*this is a fake form</p>
+            <input id="submit" name="submit" type="submit" value="Submit &raquo;">
           </form>
         </div>
 
@@ -64,7 +72,7 @@
       });
 
       $('body').on('click', function() {
-        $('#ouibounce-modal').hide();
+        $('#ouibounce-modal,ouibounce-modal-success').hide();
       });
 
       $('#ouibounce-modal .modal-footer').on('click', function() {
@@ -74,6 +82,25 @@
       $('#ouibounce-modal .modal').on('click', function(e) {
         e.stopPropagation();
       });
+	  
+	 
+	  //var submitUrl = 'http://covomo-test-projekt.dev/api.php';
+	  var submitUrl = 'api.php';
+	  
+	  $("form#emailerForm #submit").click(function() {
+			
+			var email = $("#email").val();
+			
+			if($("form")[0].checkValidity()) {
+				$.post(submitUrl, {email:email, rndVal:Math.random()}, function(data) {
+					$("#ouibounce-modal").fadeOut(1200, function() {
+						$("#ouibounce-modal-success").fadeIn(500).delay(2000).fadeOut(700);
+					});
+				});
+			}
+			return false;  
+	  });
+	  
     </script>
 
 </body>
