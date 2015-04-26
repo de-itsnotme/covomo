@@ -41,3 +41,7 @@ table#pagetable div.product {
 	height:100px;
 	width:100px;	
 }
+
+
+
+#ouibounce-modal-success{font-family:'Open Sans',sans-serif;display:none;position:fixed;top:0;left:0;width:100%;height:100%}#ouibounce-modal-success .underlay{width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.5);cursor:pointer;-webkit-animation:fadein .5s;animation:fadein .5s}#ouibounce-modal-success .modal{width:600px;height:400px;background-color:#f0f1f2;z-index:1;position:absolute;margin:auto;top:0;right:0;bottom:0;left:0;border-radius:4px;-webkit-animation:popin .3s;animation:popin .3s}#ouibounce-modal-success .modal-title{font-size:18px;background-color:#252525;color:#fff;padding:10px;margin:0;border-radius:4px 4px 0 0;text-align:center}#ouibounce-modal-success h3{color:#fff;font-size:1em;margin:.2em;text-transform:uppercase;font-weight:500}
