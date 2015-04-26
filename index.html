@@ -5,11 +5,14 @@
 <title>The landing page</title>
 <link rel="stylesheet" href="css/ouibounce.min.css">
 <link rel="stylesheet" href="css/custom.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="js/ouibounce.js"></script>
+<script src="js/jquery.localize.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
 
-	<h1>The products are</h1>
+	<h1 data-localize="the_products">T</h1>
 
     <table id="pagetable" align="center">
     	<tr>
@@ -29,10 +32,10 @@
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-          <h3>Success!</h3>
+          <h3 data-localize="success">s</h3>
         </div>
         <div class="modal-body">
-          <h4>We have received your email address and shall get back to you shortly.</h4>
+          <h4 data-localize="received_email">We</h4>
         </div>
       </div>
     </div>
@@ -42,12 +45,11 @@
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-          <h3>Before you leave...</h3>
+          <h3 data-localize="before_you">Before</h3>
         </div>
 
         <div class="modal-body">
-          <h4>Sure this offer interests you, doesn't it?<br />
-          Why not drop us your email address so that we get back to you instead. :)</h4>
+          <h4 data-localize="sure_this">Sure</h4>
           
           <form id="emailerForm" method="post" enctype="multipart/form-data" action="http://covomo-test-projekt.dev/api.php">
             <input type="text" placeholder="you@email.com" name="email" id="email" required="required">
@@ -56,13 +58,12 @@
         </div>
 
         <div class="modal-footer">
-          <p>no thanks</p>
+          <p data-localize="no_thanks">no</p>
         </div>
       </div>
     </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="js/ouibounce.js"></script>
+
 
 <script>
 
@@ -104,6 +105,14 @@
 			return false;  
 	  });
 	  
+    </script>
+    
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        var opts = { language: "en", pathPrefix: "js/" };
+        $("[data-localize]")
+          .localize("texts", opts)
+      });
     </script>
 
 </body>
